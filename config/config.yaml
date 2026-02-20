@@ -1,0 +1,59 @@
+env: local
+
+local:
+  log:
+    level: debug
+    format: text
+    add_source: true
+
+  server:
+    host: 0.0.0.0
+    port: 7891
+
+  kuper:
+    base_url: https://kuper.ru
+    store_id: 86
+
+  cli:
+    category_id: 0
+    output_file: ./kuperparser-api
+
+  pagination:
+    per_page: 5
+    offers_limit: 10
+    max_pages: 500
+
+dev:
+  log:
+    level: info
+    format: text
+    add_source: true
+  server:
+    host: 0.0.0.0
+    port: 7891
+  kuper:
+    base_url: https://kuper.ru
+    store_id: 0
+
+prod:
+  log:
+    level: info
+    format: json
+    add_source: false
+  server:
+    host: 0.0.0.0
+    port: 7891
+  kuper:
+    base_url: https://kuper.ru
+    store_id: 0
+
+proxy:
+  mode: list
+  # бесплатные открытые прокси
+  list:
+    - http://89.208.85.78:18080
+    - http://90.189.147.209:1080
+    - http://89.208.85.78:18080
+  rotation_url: ''
+  rotation_ttl_seconds: 10
+  fail_open: false
